@@ -555,6 +555,11 @@ footer{gap:16px;line-height:1.4}
 .site-preview{background:#a9c9d9}
 .identity-preview{background:#d28da4}
 
+/* Reserve space for the tilted lettering instead of rotating a full-width flex item. */
+.identity-preview .poster-word{align-self:flex-start;flex-shrink:0;width:max-content;max-width:100%;line-height:.9;margin:26px 0 28px;transform-origin:center}
+.identity-preview p{flex-shrink:0;margin:0 0 24px}
+.identity-preview>span,.identity-preview>b{flex-shrink:0}
+
 /* Keep the chat CTA legible in dark mode on every screen size. */
 
 /* Final responsive header system — simple at every breakpoint. */
