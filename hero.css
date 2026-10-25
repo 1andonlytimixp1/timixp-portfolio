@@ -16,7 +16,7 @@
 @media(min-width:961px){.hero h1{font-size:clamp(68px,9vw,130px)}}
 @media(min-width:701px) and (max-width:960px){
   .hero.wrap{padding-top:20px}
-  .hero-orbit-slot{width:190px;height:190px;flex-basis:190px;margin-right:0}
+  .hero-orbit-slot{width:190px;height:190px;flex-basis:190px;margin-right:8px}
   .hero .orbit{width:140px;height:140px}
   .hero .orbit span{width:172px;font-size:10px;letter-spacing:3px}
   .hero .hero-grid{grid-template-columns:1fr;gap:36px;margin:20px 0 40px}
