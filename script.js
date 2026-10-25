@@ -65,6 +65,9 @@ menuToggle.addEventListener('click', () => {
 });
 mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 menuScrim.addEventListener('click', closeMenu);
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 700) closeMenu();
+});
 
 const nav = document.querySelector('.nav');
 const progress = document.querySelector('.scroll-progress');

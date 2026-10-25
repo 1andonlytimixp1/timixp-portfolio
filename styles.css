@@ -556,6 +556,37 @@ footer{gap:16px;line-height:1.4}
 .identity-preview{background:#d28da4}
 
 /* Keep the chat CTA legible in dark mode on every screen size. */
+
+/* Final responsive header system — simple at every breakpoint. */
+.nav{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:14px;align-items:center}
+.nav nav{justify-self:center}
+.mobile-menu-toggle{display:none}
+@media(max-width:960px) and (min-width:701px){
+  .nav{gap:9px}
+  .nav nav a:not(.nav-cta){padding:8px 8px;font-size:13px}
+  .theme-toggle{min-width:auto;width:42px;padding:0;border-radius:50%}
+  .theme-label{display:none}
+  .nav-cta{padding:10px 13px;font-size:13px}
+}
+@media(max-width:700px){
+  .nav{height:70px;width:calc(100% - 28px);grid-template-columns:minmax(0,1fr) auto auto;gap:9px}
+  .nav nav,.nav-cta{display:none}
+  .brand-lockup{min-width:0;padding:0!important}
+  .logo-type{font-size:21px}
+  .mobile-menu-toggle{display:inline-flex;align-items:center;justify-content:center;order:3;width:68px;height:40px;margin:0;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:rgba(233,230,222,.68);color:var(--ink);box-shadow:none}
+  .mobile-menu-toggle:after{content:'MENU';font:600 10px 'DM Mono',monospace;letter-spacing:.04em}
+  .mobile-menu-toggle span{width:14px;height:1.5px;background:currentColor}
+  .theme-toggle{order:2;width:40px;min-width:40px;height:40px;margin:0!important;padding:0;border-radius:50%;background:rgba(233,230,222,.68)}
+  .theme-toggle span{font-size:18px}
+  .theme-label{display:none}
+  [data-theme="dark"] .theme-toggle,[data-theme="dark"] .mobile-menu-toggle{background:rgba(31,31,29,.78);border-color:rgba(244,241,234,.22)}
+  .mobile-menu{inset:12px 12px 12px auto;width:min(87vw,380px);padding:94px 24px 24px;border:1px solid var(--line);border-radius:18px;background:var(--paper);box-shadow:-18px 20px 60px rgba(0,0,0,.22);transform:translateX(calc(100% + 28px));overflow:auto}
+  .mobile-menu:before{position:absolute;top:30px;left:24px;margin:0;color:var(--orange)}
+  .mobile-menu a{padding:16px 0;font-size:clamp(25px,8vw,34px);line-height:1}
+  .mobile-menu .mobile-menu-whatsapp{min-height:54px;margin-top:28px}
+  .menu-scrim{background:rgba(21,21,21,.32);backdrop-filter:blur(3px)}
+  .menu-open .mobile-menu-toggle{position:relative;z-index:111}
+}
 [data-theme="dark"] .nav .nav-cta{display:inline-flex;align-items:center;gap:6px;background:#a6c767!important;color:#18200e!important;box-shadow:none}
 [data-theme="dark"] .nav .nav-cta span{color:#18200e!important}
 [data-theme="dark"] .nav .nav-cta:hover{background:#b8d780!important;transform:translateY(-1px)}
