@@ -29,15 +29,17 @@ document.querySelectorAll('.sample-trigger').forEach(button => button.addEventLi
   modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
 }));
 document.querySelectorAll('[data-close-modal]').forEach(button => button.addEventListener('click', closeModal));
-document.addEventListener('keydown', event => { if (event.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeModal(); closeMenu(); } });
 
 const themeToggle = document.querySelector('.theme-toggle');
+const themeLabel = document.querySelector('.theme-label');
 const savedTheme = localStorage.getItem('timix-theme');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const setTheme = theme => {
   document.documentElement.dataset.theme = theme;
   themeToggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
   themeToggle.setAttribute('title', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+  themeLabel.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
 };
 setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
 themeToggle.addEventListener('click', () => {
