@@ -46,6 +46,22 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('timix-theme', nextTheme);
 });
 
+const menuToggle = document.querySelector('.mobile-menu-toggle');
+const mobileMenu = document.querySelector('.mobile-menu');
+const closeMenu = () => {
+  document.documentElement.classList.remove('menu-open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.setAttribute('aria-label', 'Open menu');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+};
+menuToggle.addEventListener('click', () => {
+  const isOpen = document.documentElement.classList.toggle('menu-open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+});
+mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
 const nav = document.querySelector('.nav');
 const progress = document.querySelector('.scroll-progress');
 let lastScrollY = window.scrollY;
