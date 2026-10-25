@@ -48,6 +48,7 @@ themeToggle.addEventListener('click', () => {
 
 const menuToggle = document.querySelector('.mobile-menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
+const menuScrim = document.querySelector('.menu-scrim');
 const closeMenu = () => {
   document.documentElement.classList.remove('menu-open');
   menuToggle.setAttribute('aria-expanded', 'false');
@@ -61,6 +62,7 @@ menuToggle.addEventListener('click', () => {
   mobileMenu.setAttribute('aria-hidden', String(!isOpen));
 });
 mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+menuScrim.addEventListener('click', closeMenu);
 
 const nav = document.querySelector('.nav');
 const progress = document.querySelector('.scroll-progress');
