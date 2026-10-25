@@ -70,7 +70,7 @@ h2 span{font-family:Georgia,serif;font-weight:400;color:#f64b22}
 
 .skills span{font:11px 'DM Mono',monospace;border:1px solid var(--ink);border-radius:99px;padding:9px 11px}
 
-.work{background:var(--ink);color:var(--paper)}
+.work{background:#20231f;color:#e5e6df}
 
 .work .eyebrow{color:#aaa79f}
 
@@ -464,6 +464,16 @@ footer{gap:16px;line-height:1.4}
 
 /* A calmer work card — still confident, without the eye-searing neon. */
 .project-card{background:linear-gradient(128deg,#9ebc61 0%,#8cad6b 48%,#6f9cac 100%)}
+
+/* Section 05 keeps its quiet palette when the global theme switches. */
+.work .project-card{background:linear-gradient(128deg,#354431 0%,#304039 48%,#2b3f42 100%);color:#e5e6df;border:1px solid #52604e}
+.work .work-heading h2 span,.work .project-list>article>span{color:#9aac7f}
+.work .eyebrow,.work .work-heading p,.work .project-list p,.work .project-list b{color:#b7bcb1}
+.work .project-list,.work .project-list article{border-color:#4b5146}
+.work .project-list article:hover h3{color:#8faa43}
+.work .circuit{border-color:#a6b49b;opacity:.26}
+.work .circuit b{border-color:#a6b49b}
+.work .circuit i{background:#a6b49b}
 
 /* A studio-style mobile drawer: clear, thumb-friendly, and intentionally calm. */
 @media(max-width:700px){
