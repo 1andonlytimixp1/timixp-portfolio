@@ -1,4 +1,4 @@
-:root{--ink:#151515;--paper:#f4f1ea;--lime:#c8ff34;--blue:#85b5ff;--line:rgba(21,21,21,.18)}
+:root{--ink:#1c1b18;--paper:#e9e6de;--lime:#b9da59;--blue:#7ea7d8;--line:rgba(28,27,24,.18)}
 
 *{box-sizing:border-box}
 
@@ -178,7 +178,7 @@ footer{gap:16px;line-height:1.4}
 
 
 /* Colour and portfolio-detail refresh */
-:root{--orange:#ff6b35;--pink:#ff91bd;--purple:#e1dcff}
+:root{--orange:#d86542;--pink:#d892a9;--purple:#d7d2ee}
 
 .hero{background:radial-gradient(circle at 78% 35%,#ffb7d1 0 2%,transparent 20%),radial-gradient(circle at 62% 72%,#b9edff 0 1%,transparent 25%)}
 
@@ -548,6 +548,12 @@ footer{gap:16px;line-height:1.4}
   .sticker-one{animation:float-soft 5.5s ease-in-out infinite}
   .section{transform:translateY(14px)}
 }
+
+/* Softer light palette: easier on the eyes without going dull. */
+.services{background:#f1eee7}
+.lab{background:#e0cd94}
+.site-preview{background:#a9c9d9}
+.identity-preview{background:#d28da4}
 
 /* Keep the chat CTA legible in dark mode on every screen size. */
 [data-theme="dark"] .nav .nav-cta{display:inline-flex;align-items:center;gap:6px;background:#a6c767!important;color:#18200e!important;box-shadow:none}
