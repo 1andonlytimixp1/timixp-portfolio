@@ -1,0 +1,4 @@
+.icon-definitions{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+.whatsapp-icon{display:inline-block;width:20px;height:20px;fill:currentColor;vertical-align:middle;flex:none}
+.nav.wrap .nav-cta .whatsapp-icon{width:18px;height:18px}
+.mobile-menu-whatsapp .whatsapp-icon,.brief-send .whatsapp-icon{width:22px;height:22px}
