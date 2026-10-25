@@ -27,11 +27,16 @@
   .hero-copy>.text-link{grid-column:2;grid-row:2;justify-self:start}
 }
 @media(max-width:700px){
-  .hero.wrap{min-height:calc(100svh - var(--header-height));padding:32px 0 24px}
+  .hero.wrap{width:calc(100% - 40px);min-height:0;padding:36px 0 24px}
   .hero-orbit-slot{display:none}
-  .hero .hero-grid{grid-template-columns:1fr;gap:30px;margin:44px 0 36px}
-  .hero .hero-copy{width:100%;max-width:none;padding:18px 20px}
-  .hero .sticker-one{width:64px;height:64px;margin:6px 0 26px 6px}
+  .hero .hero-grid{grid-template-columns:1fr;gap:26px;margin:32px 0 28px}
+  .hero h1{font-size:clamp(54px,16.5vw,86px);line-height:.92;letter-spacing:-.075em}
+  .hero .hero-copy{display:grid;grid-template-columns:minmax(0,1fr) 54px;gap:22px 20px;align-items:center;width:100%;max-width:520px;padding:0;border:0;border-radius:0;background:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .hero .hero-copy>p{grid-column:1 / -1;grid-row:1;margin:0;font-size:16px;line-height:1.65;letter-spacing:-.02em}
+  .hero .hero-copy>.text-link{grid-column:1;grid-row:2;justify-self:start;align-self:center;margin:0;padding:12px 0 8px;min-height:44px;font-size:15px}
+  .hero .sticker-one{grid-column:2;grid-row:2;width:50px;height:50px;margin:4px 2px 4px 0;font-size:19px}
+  .hero .sticker-one small{font-size:7px;letter-spacing:.04em}
   .hero .sticker-two{display:none}
-  .hero-bottom{min-height:32px}
+  .hero-bottom{min-height:0;margin-top:0;padding-top:20px;border-top:1px solid var(--line)}
+  .hero .scroll-cue{font-size:9px;opacity:.7}
 }
