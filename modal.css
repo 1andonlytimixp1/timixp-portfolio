@@ -1,0 +1,11 @@
+/* Sample dialogs sit above navigation; only their content scrolls. */
+#samples-modal{transition:opacity .25s,visibility 0s linear .25s}
+#samples-modal.is-open{transition-delay:0s}
+#samples-modal{z-index:300;padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+#samples-modal .modal-panel{display:flex;flex-direction:column;width:min(900px,100%);max-height:min(760px,calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom)));overflow:hidden;padding:0;border:1px solid var(--header-line);border-radius:16px;box-shadow:0 20px 70px rgba(0,0,0,.3)}
+.modal-toolbar{display:flex;justify-content:flex-end;flex:none;padding:10px 14px;border-bottom:1px solid var(--header-line)}
+#samples-modal .modal-close{position:static;display:grid;place-items:center;flex:none;width:44px;height:44px;margin:0;color:var(--ink)}
+.modal-body{min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:24px clamp(20px,5vw,62px) 36px}
+.modal-close:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+@media(max-width:700px){.modal-body{padding:20px 18px 28px}#samples-modal .modal-panel h2{font-size:clamp(30px,7vw,42px)}}
+@media(prefers-reduced-motion:reduce){#samples-modal,#samples-modal .modal-panel{transition:none}}

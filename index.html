@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="navigation.css?v=2" />
     <link rel="stylesheet" href="hero.css?v=1" />
+    <link rel="stylesheet" href="modal.css?v=1" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -162,15 +163,17 @@
     <div class="modal" id="samples-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <div class="modal-backdrop" data-close-modal></div>
       <div class="modal-panel">
-        <button class="modal-close" type="button" data-close-modal aria-label="Close samples">×</button>
+        <div class="modal-toolbar"><button class="modal-close" type="button" data-close-modal aria-label="Close samples">×</button></div>
+        <div class="modal-body">
         <p class="eyebrow" id="modal-type">SELECTED WORK</p>
         <h2 id="modal-title">Sample work</h2>
         <p class="modal-intro" id="modal-intro"></p>
         <div class="sample-grid" id="sample-grid"></div>
         <a class="modal-contact" href="https://wa.me/2347019833790" target="_blank" rel="noreferrer">Want something similar? Let’s talk <span>↗</span></a>
+        </div>
       </div>
     </div>
     <footer class="wrap"><span>© 2026 Timix P</span><span>Designed to keep building.</span></footer>
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
   </body>
 </html>

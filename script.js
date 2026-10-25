@@ -25,12 +25,32 @@ const type = document.querySelector('#modal-type');
 const title = document.querySelector('#modal-title');
 const intro = document.querySelector('#modal-intro');
 const grid = document.querySelector('#sample-grid');
-const closeModal = () => { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; };
+let sampleOpener = null;
+let previousOverflow = '';
+const closeModal = () => {
+  if (!modal.classList.contains('is-open')) return;
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = previousOverflow;
+  sampleOpener?.focus({ preventScroll: true });
+};
+modal.addEventListener('keydown', event => {
+  if (event.key !== 'Tab') return;
+  const targets = [...modal.querySelectorAll('button, a[href]')];
+  const index = targets.indexOf(document.activeElement);
+  event.preventDefault();
+  targets[(index + (event.shiftKey ? -1 : 1) + targets.length) % targets.length].focus();
+});
 document.querySelectorAll('.sample-trigger').forEach(button => button.addEventListener('click', () => {
   const content = sampleData[button.dataset.modal];
+  closeMenu();
+  sampleOpener = button;
+  previousOverflow = document.body.style.overflow;
   type.textContent = content.label; title.textContent = content.title; intro.textContent = content.intro;
   grid.innerHTML = content.samples.map(([name, description], index) => `<article class="sample-item"><span>0${index + 1} / SAMPLE</span><div><h3>${name}</h3><p>${description}</p></div></article>`).join('');
   modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+  modal.querySelector('.modal-body').scrollTop = 0;
+  modal.querySelector('.modal-close').focus({ preventScroll: true });
 }));
 document.querySelectorAll('[data-close-modal]').forEach(button => button.addEventListener('click', closeModal));
 document.addEventListener('keydown', event => { if (event.key === 'Escape') { closeModal(); closeMenu(); } });
