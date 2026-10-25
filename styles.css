@@ -334,6 +334,9 @@ footer{gap:16px;line-height:1.4}
 [data-theme="dark"] .focus-card{background:#668bc5}
 [data-theme="dark"] .quote-card{background:#d95830}
 [data-theme="dark"] .services{background:#25211a}
+[data-theme="dark"] .web-card{background:#536d22}
+[data-theme="dark"] .app-card{background:#476b9e}
+[data-theme="dark"] .design-card{background:#9a4e70}
 [data-theme="dark"] .modal-panel{background:#242424;box-shadow:12px 12px 0 var(--lime)}
 [data-theme="dark"] .modal-close{background:#242424;color:var(--ink);border-color:var(--ink)}
 [data-theme="dark"] .sample-item{color:#151515}
