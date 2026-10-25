@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="navigation.css?v=2" />
     <link rel="stylesheet" href="hero.css?v=1" />
     <link rel="stylesheet" href="modal.css?v=1" />
+    <link rel="stylesheet" href="project-starter.css?v=1" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -151,6 +152,47 @@
           <h2>Got a bright<br /><span>idea?</span></h2>
           <p>Let’s make it real. Send a message with your idea, and we’ll figure out the clearest next step together.</p>
         </div>
+        <div class="brief-builder" id="project-starter">
+          <form class="brief-form" aria-labelledby="brief-heading">
+            <div class="brief-kicker"><span class="brief-dot" aria-hidden="true"></span> SMALL IDEA. GOOD START.</div>
+            <h3 id="brief-heading">What are we making?</h3>
+            <p class="brief-lead">A few details. A clearer starting point.</p>
+            <fieldset class="brief-services">
+              <legend>01 / Choose your project</legend>
+              <div class="brief-options">
+                <label><input type="radio" name="project" value="website" checked /><span><b aria-hidden="true">↗</b> Website</span></label>
+                <label><input type="radio" name="project" value="app" /><span><b aria-hidden="true">▦</b> App</span></label>
+                <label><input type="radio" name="project" value="graphics" /><span><b aria-hidden="true">✳</b> Graphics</span></label>
+              </div>
+            </fieldset>
+            <label class="brief-field" for="brief-idea">02 / Tell me the idea <span>optional</span></label>
+            <textarea id="brief-idea" name="idea" rows="3" maxlength="400" placeholder="A portfolio for my work, a shop for my brand, an idea I've been sitting on…"></textarea>
+            <div class="brief-count"><span>No perfect brief needed.</span><span id="brief-count">0 / 400</span></div>
+            <label class="brief-field" for="brief-timing">03 / Your ideal timing</label>
+            <select id="brief-timing" name="timing"><option>Just exploring</option><option>This month</option><option>Next month</option><option>I'm flexible</option></select>
+            <a class="brief-send" id="brief-send" href="https://wa.me/2347019833790" target="_blank" rel="noopener noreferrer">Open WhatsApp <span aria-hidden="true">↗</span></a>
+            <p class="brief-privacy">You review the message first. Nothing is sent automatically.</p>
+            <noscript><p>JavaScript is off, but you can still open WhatsApp and tell me your idea.</p></noscript>
+          </form>
+          <aside class="brief-preview" data-project="website" aria-label="Project preview">
+            <div class="brief-preview-top"><span>TIMIX P / PROJECT NOTE</span><span aria-hidden="true">↗</span></div>
+            <div class="brief-art" aria-hidden="true">
+              <div class="brief-art-site"><div><i></i><i></i><i></i></div><strong>hello<span>.</span></strong><b></b><b></b></div>
+              <div class="brief-art-app"><i></i><span>Make<br />room.</span><b>＋</b></div>
+              <div class="brief-art-graphics"><span>✳</span><b>MAKE YOUR MARK.</b></div>
+            </div>
+            <div class="brief-preview-copy" aria-live="polite" aria-atomic="true">
+              <p id="brief-preview-label">A HOME FOR YOUR IDEAS</p>
+              <h3 id="brief-preview-title">Your corner<br />of the internet.</h3>
+              <p id="brief-preview-description">A website that feels like you. Built for the people you want to reach.</p>
+            </div>
+            <div class="brief-ticket">
+              <div><span>THE PLAN</span><strong id="brief-plan">Website</strong></div>
+              <div><span>THE PACE</span><strong id="brief-pace">Just exploring</strong></div>
+            </div>
+            <div class="brief-preview-foot"><span>Clear scope. Fair pricing.</span><span>Made together.</span></div>
+          </aside>
+        </div>
         <div class="contact-links">
           <a href="mailto:1andonlytimixp@gmail.com"><span>Email me</span><b>1andonlytimixp@gmail.com</b><i>↗</i></a>
           <a href="tel:+2347019833790"><span>Call</span><b>0701 983 3790</b><i>↗</i></a>
@@ -175,5 +217,6 @@
     </div>
     <footer class="wrap"><span>© 2026 Timix P</span><span>Designed to keep building.</span></footer>
     <script src="script.js?v=3"></script>
+    <script src="project-starter.js?v=1"></script>
   </body>
 </html>
