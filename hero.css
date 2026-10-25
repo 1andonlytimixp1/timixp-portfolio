@@ -1,0 +1,37 @@
+/* Hero decorations occupy layout space, including while they animate. */
+.hero.wrap{display:flex;flex-direction:column;min-height:calc(100svh - 76px);padding:24px 0 28px}
+.hero-top{display:flex;justify-content:space-between;align-items:center;gap:24px;min-width:0}
+.hero-top>.eyebrow{margin:0}
+.hero-orbit-slot{display:grid;place-items:center;width:224px;height:224px;flex:0 0 224px;margin-right:clamp(-28px,calc((1256px - 100vw)/2),0px)}
+.hero .orbit{position:relative;inset:auto;display:grid;width:158px;height:158px;flex:none}
+.hero .orbit span{width:190px}
+.hero .hero-grid{grid-template-columns:minmax(0,1.28fr) minmax(0,.72fr);gap:clamp(28px,4vw,50px);align-items:center;margin:24px 0 52px}
+.hero .hero-grid>*{min-width:0}
+.hero .hero-copy{margin:0;max-width:390px}
+.hero .sticker-one{position:relative;inset:auto;z-index:auto;width:78px;height:78px;margin:10px 0 30px 12px;flex-shrink:0;transform:rotate(10deg)}
+.hero-bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:auto;min-height:70px}
+.hero .scroll-cue{position:static;inset:auto;z-index:1}
+.hero .sticker-two{position:relative;inset:auto;z-index:auto;margin:10px 40px 10px 0;flex:none}
+.hero:after{display:none}
+@media(min-width:961px){.hero h1{font-size:clamp(68px,9vw,130px)}}
+@media(min-width:701px) and (max-width:960px){
+  .hero.wrap{padding-top:20px}
+  .hero-orbit-slot{width:190px;height:190px;flex-basis:190px;margin-right:0}
+  .hero .orbit{width:140px;height:140px}
+  .hero .orbit span{width:172px;font-size:10px;letter-spacing:3px}
+  .hero .hero-grid{grid-template-columns:1fr;gap:36px;margin:20px 0 40px}
+  .hero h1{font-size:clamp(76px,11vw,104px)}
+  .hero .hero-copy{max-width:620px;display:grid;grid-template-columns:100px minmax(0,1fr);gap:0 24px}
+  .hero .sticker-one{grid-column:1;grid-row:1 / 3;margin:12px 0 12px 8px}
+  .hero-copy>p{grid-column:2;grid-row:1}
+  .hero-copy>.text-link{grid-column:2;grid-row:2;justify-self:start}
+}
+@media(max-width:700px){
+  .hero.wrap{min-height:calc(100svh - var(--header-height));padding:32px 0 24px}
+  .hero-orbit-slot{display:none}
+  .hero .hero-grid{grid-template-columns:1fr;gap:30px;margin:44px 0 36px}
+  .hero .hero-copy{width:100%;max-width:none;padding:18px 20px}
+  .hero .sticker-one{width:64px;height:64px;margin:6px 0 26px 6px}
+  .hero .sticker-two{display:none}
+  .hero-bottom{min-height:32px}
+}
