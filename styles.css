@@ -353,6 +353,63 @@ footer{gap:16px;line-height:1.4}
 /* Scroll-aware header and finishing touches */
 .scroll-progress{position:fixed;inset:0 auto auto 0;z-index:200;width:100%;height:3px;background:transparent;pointer-events:none}.scroll-progress i{display:block;width:var(--scroll-progress,0%);height:100%;background:linear-gradient(90deg,var(--orange),var(--pink),var(--lime));transition:width .08s linear}.nav{transition:transform .35s cubic-bezier(.2,.8,.2,1),background .35s ease,box-shadow .35s ease,border-color .35s ease}.nav.nav-scrolled{background:transparent!important;border-color:transparent;box-shadow:none}.nav.nav-scrolled .brand-lockup,.nav.nav-scrolled nav,.nav.nav-scrolled .theme-toggle,.nav.nav-scrolled .nav-cta{backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px)}.nav.nav-scrolled .brand-lockup{padding:7px 10px 7px 0;border-radius:12px}.nav.nav-scrolled nav{padding:10px 15px;border:1px solid color-mix(in srgb,var(--ink) 22%,transparent);border-radius:999px;background:color-mix(in srgb,var(--paper) 35%,transparent)}.nav.nav-scrolled .theme-toggle{background:color-mix(in srgb,var(--paper) 38%,transparent)}.nav.nav-scrolled .nav-cta{box-shadow:0 7px 25px rgba(0,0,0,.14)}.nav.nav-hidden{transform:translateY(-110%)}.nav a{transition:color .2s ease}.service-card,.showcase,.project-card{will-change:transform}.showcase{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}.showcase:hover{transform:translateY(-8px) rotate(-.5deg);box-shadow:10px 10px 0 var(--ink)}.contact{position:relative}.contact:before{content:'✦';position:absolute;right:7%;top:75px;color:var(--orange);font-size:42px;animation:pulse 2.3s ease-in-out infinite}@media(max-width:700px){.nav.nav-scrolled nav{display:none}.nav.nav-scrolled .brand-lockup{background:transparent}.contact:before{right:5%;top:47px;font-size:28px}}
 
+/* Mobile-first refinements: a calmer, more intentional small-screen layout. */
+@media(max-width:700px){
+  .wrap{width:min(100% - 28px,560px)}
+  .nav{height:68px;position:sticky;top:0;isolation:isolate}
+  .logo-type{font-size:20px}
+  .logo-mark{width:25px;height:25px}
+  .theme-toggle{width:38px;height:38px;margin-right:8px}
+  .nav-cta{padding:10px 12px;font-size:13px;white-space:nowrap}
+  .hero{min-height:calc(100svh - 68px);padding:34px 0 28px}
+  .hero-grid{margin-top:74px;gap:22px}
+  .hero h1{font-size:clamp(58px,17.5vw,76px);line-height:.84}
+  .hero-copy{margin-top:6px;max-width:31rem;padding:14px 16px;border-left:2px solid var(--orange);background:color-mix(in srgb,var(--paper) 62%,transparent);backdrop-filter:blur(8px)}
+  .hero-copy p{font-size:16px;line-height:1.48}
+  .orbit{opacity:.6;right:-43px;top:68px}
+  .sticker-one{right:20%;top:20%;transform:scale(.58) rotate(13deg)}
+  .sticker-two{right:4%;bottom:15%;transform:scale(.62) rotate(-12deg)}
+  .scroll-cue{bottom:20px;font-size:9px}
+  .ticker{padding:13px 0;font-size:9px}
+  .section{padding:76px 0}
+  .section-grid{margin-top:36px;gap:24px}
+  .about-text p{font-size:16px;line-height:1.55}
+  .skills{gap:7px;margin-top:26px}
+  .skills span{padding:8px 10px;font-size:10px}
+  .mini-stats{gap:24px;margin-top:28px}
+  .services-heading,.approach-intro,.journey-header,.work-heading,.lab-heading{margin:34px 0;gap:20px}
+  .services-heading p,.approach-intro p,.journey-header p,.work-heading p,.lab-heading p{font-size:16px}
+  .service-grid{gap:12px}
+  .service-card{min-height:292px;padding:20px}
+  .service-card>span{margin:16px 0 12px}
+  .service-card h3{font-size:clamp(34px,10vw,42px);margin-bottom:14px}
+  .service-card p{font-size:14px}
+  .sample-trigger{margin-top:18px}
+  .approach:after{opacity:.65}
+  .steps article,.steps article:first-child{min-height:128px;padding:18px 0}
+  .steps h3{font-size:27px;margin:13px 0}
+  .journey-grid{gap:12px}
+  .focus-card,.quote-card{min-height:276px;padding:20px}
+  .focus-card h3{font-size:38px;margin:38px 0 20px}
+  .quote-card p{font-size:27px}
+  .project-card{min-height:306px;padding:19px}
+  .project-card h3{font-size:clamp(52px,16vw,72px);margin:74px 0 18px}
+  .circuit{width:52%;right:-3%;opacity:.7}
+  .project-list article{padding:20px 0}
+  .showcase-grid{gap:12px}
+  .showcase{padding:18px}
+  .site-preview{min-height:350px}
+  .identity-preview,.app-preview{min-height:255px}
+  .app-preview{gap:16px}
+  .phone{width:108px;height:218px;padding:10px}
+  .contact-main{margin:34px 0 38px;gap:20px}
+  .contact-links a{padding:18px 0;gap:7px}
+  .contact-links b{font-size:15px;overflow-wrap:anywhere}
+  .availability{line-height:1.55}
+  footer{padding:22px 0 30px;font-size:9px}
+  .modal-panel{width:calc(100% - 24px);max-height:calc(100svh - 24px);padding:24px 18px;overflow-y:auto}
+}
+
 /* Keep the chat CTA legible in dark mode on every screen size. */
 [data-theme="dark"] .nav .nav-cta{display:inline-flex;align-items:center;gap:6px;background:var(--lime)!important;color:#151515!important;box-shadow:0 8px 28px rgba(200,255,52,.2)}
 [data-theme="dark"] .nav .nav-cta span{color:#151515!important}
