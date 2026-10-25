@@ -530,6 +530,25 @@ footer{gap:16px;line-height:1.4}
   .mobile-menu .mobile-menu-whatsapp{font-size:14px}
 }
 
+/* Motion, restored with restraint — personality without the theme-park energy. */
+@media(prefers-reduced-motion:no-preference){
+  .section{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+  .section.in-view{opacity:1;transform:none}
+  .orbit{animation:spin 26s linear infinite}
+  .sticker-one{animation:float-soft 5s ease-in-out infinite}
+  .sticker-two{animation:float-soft 6.5s ease-in-out -1.8s infinite}
+  .service-card,.project-list article,.faq-list details{transition:transform .28s ease,background .28s ease,border-color .28s ease,box-shadow .28s ease}
+  .service-card:hover{transform:translateY(-6px);box-shadow:6px 7px 0 rgba(21,21,21,.22)}
+  .project-list article:hover{transform:translateX(6px)}
+  .faq-list details:hover{background:color-mix(in srgb,var(--ink) 3%,transparent)}
+  [data-theme="dark"] .faq-list details:hover{background:rgba(244,241,234,.045)}
+}
+@keyframes float-soft{50%{transform:translateY(-9px) rotate(4deg)}}
+@media(max-width:700px){
+  .sticker-one{animation:float-soft 5.5s ease-in-out infinite}
+  .section{transform:translateY(14px)}
+}
+
 /* Keep the chat CTA legible in dark mode on every screen size. */
 [data-theme="dark"] .nav .nav-cta{display:inline-flex;align-items:center;gap:6px;background:#a6c767!important;color:#18200e!important;box-shadow:none}
 [data-theme="dark"] .nav .nav-cta span{color:#18200e!important}
