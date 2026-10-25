@@ -24,7 +24,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:'Space Grotes
 
 .nav-cta span{color:var(--lime)}
 
-.hero{min-height:calc(100vh - 92px);padding:65px 0 42px;position:relative;overflow:hidden}
+.hero{min-height:calc(100vh - 92px);padding:65px 0 42px;position:relative;overflow:visible}
 
 .eyebrow{font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.05em;font-size:11px;margin:0;color:#5d5b56}
 
@@ -48,7 +48,7 @@ h2 span{font-family:Georgia,serif;font-weight:400;color:#f64b22}
 
 .text-link span{margin-left:12px;color:#f64b22}
 
-.orbit{position:absolute;right:0;top:83px;width:158px;height:158px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;animation:spin 15s linear infinite}
+.orbit{position:absolute;right:-28px;top:83px;width:158px;height:158px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;animation:spin 15s linear infinite}
 
 .orbit span{font:11px 'DM Mono',monospace;letter-spacing:4px;width:205px;text-align:center;transform:rotate(-26deg)}
 
