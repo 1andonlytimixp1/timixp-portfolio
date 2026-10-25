@@ -1,7 +1,11 @@
 const links = document.querySelectorAll('a[href^="#"]');
 links.forEach(link => link.addEventListener('click', event => {
   const section = document.querySelector(link.getAttribute('href'));
-  if (section) { event.preventDefault(); section.scrollIntoView({ behavior: 'smooth' }); }
+  if (section) {
+    event.preventDefault();
+    closeMenu();
+    section.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }
 }));
 
 const observer = new IntersectionObserver(entries => {
@@ -51,20 +55,61 @@ themeToggle.addEventListener('click', () => {
 const menuToggle = document.querySelector('.mobile-menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
 const menuScrim = document.querySelector('.menu-scrim');
+const menuLabel = menuToggle.querySelector('b');
+const backgroundContent = [document.querySelector('main'), document.querySelector('footer')];
+let menuIsOpen = false;
+let savedScrollY = 0;
+let savedBodyStyles = '';
+mobileMenu.inert = true;
+menuScrim.tabIndex = -1;
+
 const closeMenu = () => {
+  if (!menuIsOpen) return;
+  const restoreFocus = mobileMenu.contains(document.activeElement) || document.activeElement === menuToggle;
+  menuIsOpen = false;
   document.documentElement.classList.remove('menu-open');
   menuToggle.setAttribute('aria-expanded', 'false');
   menuToggle.setAttribute('aria-label', 'Open menu');
+  menuLabel.textContent = 'Menu';
   mobileMenu.setAttribute('aria-hidden', 'true');
+  mobileMenu.inert = true;
+  backgroundContent.forEach(element => { element.inert = false; });
+  document.body.style.cssText = savedBodyStyles;
+  const previousBehavior = document.documentElement.style.scrollBehavior;
+  document.documentElement.style.scrollBehavior = 'auto';
+  window.scrollTo(0, savedScrollY);
+  document.documentElement.style.scrollBehavior = previousBehavior;
+  lastScrollY = savedScrollY;
+  if (restoreFocus) menuToggle.focus({ preventScroll: true });
 };
 menuToggle.addEventListener('click', () => {
-  const isOpen = document.documentElement.classList.toggle('menu-open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-  menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-  mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+  if (menuIsOpen) { closeMenu(); return; }
+  savedScrollY = window.scrollY;
+  savedBodyStyles = document.body.style.cssText;
+  menuIsOpen = true;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${savedScrollY}px`;
+  document.body.style.left = '0';
+  document.body.style.right = '0';
+  document.documentElement.classList.add('menu-open');
+  nav.classList.remove('nav-hidden');
+  menuToggle.setAttribute('aria-expanded', 'true');
+  menuToggle.setAttribute('aria-label', 'Close menu');
+  menuLabel.textContent = 'Close';
+  mobileMenu.setAttribute('aria-hidden', 'false');
+  mobileMenu.inert = false;
+  backgroundContent.forEach(element => { element.inert = true; });
 });
 mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 menuScrim.addEventListener('click', closeMenu);
+document.addEventListener('keydown', event => {
+  if (!menuIsOpen || event.key !== 'Tab') return;
+  const focusables = [themeToggle, menuToggle, ...mobileMenu.querySelectorAll('a')];
+  const index = focusables.indexOf(document.activeElement);
+  event.preventDefault();
+  const nextIndex = (index + (event.shiftKey ? -1 : 1) + focusables.length) % focusables.length;
+  focusables[nextIndex].focus();
+});
 window.addEventListener('resize', () => {
   if (window.innerWidth > 700) closeMenu();
 });
@@ -74,11 +119,12 @@ const progress = document.querySelector('.scroll-progress');
 let lastScrollY = window.scrollY;
 let ticking = false;
 const updateScrollUI = () => {
+  if (menuIsOpen) { ticking = false; return; }
   const currentY = window.scrollY;
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
   progress.style.setProperty('--scroll-progress', `${maxScroll ? (currentY / maxScroll) * 100 : 0}%`);
   nav.classList.toggle('nav-scrolled', currentY > 35);
-  nav.classList.toggle('nav-hidden', currentY > 145 && currentY > lastScrollY);
+  nav.classList.toggle('nav-hidden', window.innerWidth > 700 && !nav.contains(document.activeElement) && currentY > 145 && currentY > lastScrollY);
   lastScrollY = currentY;
   ticking = false;
 };
