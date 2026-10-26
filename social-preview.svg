@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#b6c5a2" opacity=".12"/></pattern></defs>
+<rect width="1200" height="630" fill="#1e251c"/><rect x="844" width="356" height="630" fill="#283224"/><rect x="844" width="356" height="630" fill="url(#dots)"/>
+<g transform="translate(64 50)"><rect width="52" height="52" rx="14" fill="#e9e6de"/><rect x="10" y="24" width="7" height="17" rx="3.5" fill="#7c9854"/><rect x="23" y="11" width="7" height="30" rx="3.5" fill="#6a96ac"/><rect x="36" y="18" width="7" height="23" rx="3.5" fill="#c7724f"/></g>
+<text x="133" y="87" font-family="Arial,sans-serif" font-size="31" font-weight="700" fill="#eeeee4">Timix P</text>
+<text x="64" y="174" font-family="Arial,sans-serif" font-size="15" letter-spacing="3" fill="#afbd9f">SOFTWARE DEVELOPER &amp; DESIGNER</text>
+<text x="58" y="286" font-family="Arial,sans-serif" font-size="105" font-weight="700" letter-spacing="-6" fill="#eeeee4">Ideas into</text>
+<text x="60" y="394" font-family="Georgia,serif" font-size="101" font-style="italic" letter-spacing="-4" fill="#d98a67">something real.</text>
+<text x="64" y="458" font-family="Arial,sans-serif" font-size="22" fill="#bdc6b4">Websites. Apps. Visual identities.</text>
+<path d="M64 523H784" stroke="#49553e"/><text x="64" y="565" font-family="Arial,sans-serif" font-size="18" fill="#b9c7aa">Clear ideas. Thoughtful design. Fair pricing.</text>
+<g transform="translate(900 192) rotate(-8 112 125)"><rect x="10" y="70" width="56" height="180" rx="24" fill="#afc18e"/><rect x="88" y="0" width="56" height="250" rx="24" fill="#91b4c3"/><rect x="166" y="36" width="56" height="214" rx="24" fill="#c88768"/></g>
+<text x="1022" y="565" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" letter-spacing="2" fill="#aab99b">LET'S BUILD SOMETHING.</text>
+</svg>

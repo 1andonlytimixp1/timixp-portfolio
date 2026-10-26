@@ -1,0 +1,22 @@
+/* Finishing touches: readable samples and a quiet current-section indicator. */
+.nav.wrap nav a[aria-current="location"]{background:var(--header-hover);color:var(--header-fg)}
+.mobile-menu a[aria-current="location"]{color:var(--header-fg)}
+.mobile-menu a[aria-current="location"]>span{opacity:1;color:var(--section-accent);font-weight:700}
+.mobile-menu a[aria-current="location"]:not(.mobile-menu-whatsapp){box-shadow:inset 3px 0 0 var(--section-accent);padding-left:12px}
+#samples-modal .modal-toolbar{justify-content:space-between;align-items:center;gap:18px;padding:12px 18px;background:var(--section-card)}
+.modal-toolbar-label{font:10px 'DM Mono',monospace;letter-spacing:.1em;color:var(--section-muted)}
+#samples-modal .modal-panel{background:var(--section-bg);color:var(--section-ink)}
+#samples-modal .modal-close{background:var(--section-bg);border-color:var(--section-line);color:var(--section-ink);transition:background .2s}
+#samples-modal .modal-close:hover{background:var(--section-alt)}
+#samples-modal .eyebrow{color:var(--section-muted)}
+#samples-modal h2{font-size:clamp(32px,5vw,52px);line-height:1.08;letter-spacing:-.055em}
+#samples-modal .modal-intro{font-size:15px;line-height:1.7;color:var(--section-muted);max-width:620px}
+#samples-modal .sample-grid{gap:14px;margin:28px 0}
+#samples-modal .sample-item{min-width:0;min-height:196px;padding:22px;background:var(--section-card);border:1px solid var(--section-line);border-radius:16px;color:var(--section-ink)}
+#samples-modal .sample-item>span{align-self:flex-start;color:var(--section-accent);border:1px solid var(--section-line);border-radius:30px;padding:6px 9px;font-size:9px;letter-spacing:.04em}
+#samples-modal .sample-item h3{font-size:25px;line-height:1.12;letter-spacing:-.045em;margin:26px 0 12px}
+#samples-modal .sample-item p{font-size:14px;line-height:1.65;color:var(--section-muted)}
+#samples-modal .modal-contact{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:15px 18px;min-height:50px;border:1px solid var(--section-line);border-radius:10px;background:var(--section-card);font-size:14px;line-height:1.5;color:var(--section-ink)}
+#samples-modal .modal-contact:hover{border-color:var(--section-accent)}
+#samples-modal .modal-contact span{color:var(--section-accent);flex:none;margin:0}
+@media(max-width:700px){#samples-modal .sample-item{padding:20px;min-height:180px}#samples-modal .sample-item h3{font-size:24px}}
